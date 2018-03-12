@@ -4,11 +4,11 @@ This program build two REST and SOAP Web Services
 
 -------------------------REST WEB SERVICE---------------------
 
-Rest Web service takes the input parameters and push them to the ActiveMQ
+Rest Web services can be accessed via the URLS :
 
-Rest Web Service gets the list of all input numbers from the DB
+http://localhost:8080/UnicoAssignment/rest/unico/push/1/2
 
-The Listener listening to the queue read the numbers and pushes it to a Java Queue so that the numbers can be read in the SOAP WEb service for finding the greatest common divisor
+http://localhost:8080/UnicoAssignment/rest/unico/list
 
 Assumption - The ActiveMQ details have been assumed
 
