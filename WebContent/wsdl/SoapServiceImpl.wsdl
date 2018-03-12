@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://impl.soapWebService.unico.com.java.main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://impl.soapWebService.unico.com.java.main" xmlns:intf="http://impl.soapWebService.unico.com.java.main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://impl.soapWebService.unico.com.java.main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getGcdList">
+    <complexType/>
+   </element>
+   <element name="getGcdListResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getGcdListReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getGcdSum">
+    <complexType/>
+   </element>
+   <element name="getGcdSumResponse">
+    <complexType>
+     <sequence>
+      <element name="getGcdSumReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getGcd">
+    <complexType/>
+   </element>
+   <element name="getGcdResponse">
+    <complexType>
+     <sequence>
+      <element name="getGcdReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getGcdRequest">
+
+      <wsdl:part element="impl:getGcd" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGcdResponse">
+
+      <wsdl:part element="impl:getGcdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGcdListRequest">
+
+      <wsdl:part element="impl:getGcdList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGcdListResponse">
+
+      <wsdl:part element="impl:getGcdListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGcdSumRequest">
+
+      <wsdl:part element="impl:getGcdSum" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGcdSumResponse">
+
+      <wsdl:part element="impl:getGcdSumResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SoapServiceImpl">
+
+      <wsdl:operation name="getGcdList">
+
+         <wsdl:input message="impl:getGcdListRequest" name="getGcdListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getGcdListResponse" name="getGcdListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getGcdSum">
+
+         <wsdl:input message="impl:getGcdSumRequest" name="getGcdSumRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getGcdSumResponse" name="getGcdSumResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getGcd">
+
+         <wsdl:input message="impl:getGcdRequest" name="getGcdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getGcdResponse" name="getGcdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SoapServiceImplSoapBinding" type="impl:SoapServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getGcdList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getGcdListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getGcdListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getGcdSum">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getGcdSumRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getGcdSumResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getGcd">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getGcdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getGcdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SoapServiceImplService">
+
+      <wsdl:port binding="impl:SoapServiceImplSoapBinding" name="SoapServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/UnicoAssignment/services/SoapServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

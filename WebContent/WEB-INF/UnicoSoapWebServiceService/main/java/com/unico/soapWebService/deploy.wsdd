@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UnicoSoapWebServiceService WSDL service -->
+
+  <service name="UnicoSoapWebService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soapWebService.unico.com.java.main"/>
+      <parameter name="wsdlServiceElement" value="UnicoSoapWebServiceService"/>
+      <parameter name="schemaQualified" value="http://soapWebService.unico.com.java.main"/>
+      <parameter name="wsdlServicePort" value="UnicoSoapWebService"/>
+      <parameter name="className" value="main.java.com.unico.soapWebService.UnicoSoapWebService"/>
+      <parameter name="wsdlPortType" value="UnicoSoapWebService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://soapWebService.unico.com.java.main" xmlns:retNS="http://soapWebService.unico.com.java.main" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGcdList" qname="operNS:getGcdList" returnQName="retNS:getGcdListReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://soapWebService.unico.com.java.main" xmlns:retNS="http://soapWebService.unico.com.java.main" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGcd" qname="operNS:getGcd" returnQName="retNS:getGcdReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://soapWebService.unico.com.java.main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:i" type="tns:int"/>
+        <parameter xmlns:pns="http://soapWebService.unico.com.java.main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:d" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://soapWebService.unico.com.java.main" xmlns:retNS="http://soapWebService.unico.com.java.main" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGcdSum" qname="operNS:getGcdSum" returnQName="retNS:getGcdSumReturn" returnType="rtns:int" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="getGcdList getGcdSum getGcd"/>
+
+  </service>
+</deployment>
